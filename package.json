@@ -1,7 +1,7 @@
 {
   "name": "mep-vote-mapper_client",
   "version": "1.0.0",
-  "description": "An application used to check out how meps voted during a plenary roll call votes.",
+  "description": "Client used to visualize data from mepVoteMapper",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --mode=development --open",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/layer-ray/mepVoteMapper.git"
+    "url": "git+ssh://git@github.com/layer-ray/mepVoteMapper_client.git"
   },
   "keywords": [
     "eu",
@@ -20,9 +20,9 @@
   "author": "Layer",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/layer-ray/mepVoteMapper/issues"
+    "url": "https://github.com/layer-ray/mepVoteMapper_client/issues"
   },
-  "homepage": "https://github.com/layer-ray/mepVoteMapper#readme",
+  "homepage": "https://github.com/layer-ray/mepVoteMapper_client#readme",
   "devDependencies": {
     "@babel/core": "^7.4.5",
     "@babel/preset-env": "^7.4.5",
