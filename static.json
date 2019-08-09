@@ -1,5 +1,4 @@
 {
   "root": "dist",
-  "clean_urls": false,
-  "error_page": "{\"root\": \"dist\", \"clean_urls\":false}"
+  "clean_urls": false
 }
