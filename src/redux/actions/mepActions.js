@@ -2,7 +2,7 @@ import {fetchSortedMeps,
         SET_MEP,
         POPUP_ERROR} from '../types';
 
-const baseUrl = 'http://localhost:5000/mep'
+const baseUrl = 'https://check-the-vote.herokuapp.com/mep'
 
 export const fetchSortedMepsAction = () => async dispatch => {
     dispatch({type:fetchSortedMeps.LOADING});

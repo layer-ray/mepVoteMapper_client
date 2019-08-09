@@ -1,6 +1,6 @@
 import {fetchGroups, POPUP_ERROR} from '../types';
 
-const baseUrl = 'http://localhost:5000/group'
+const baseUrl = 'https://check-the-vote.herokuapp.com/group'
 
 export const fetchGroupsAction = () => async  dispatch => {
     dispatch({type: fetchGroups.LOADING});
