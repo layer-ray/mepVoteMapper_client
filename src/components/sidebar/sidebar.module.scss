@@ -1,0 +1,20 @@
+@import '../../app-wide-scss/shared.scss';
+
+.fields {
+    //margin-top: 3rem;
+    padding: 1rem;
+    border: 5px double $custom-alt2;
+    
+    dt {
+        font-style: italic;
+    }
+    
+    dd {
+        font-weight: bold;
+        margin-bottom: 1rem;
+    }
+}
+
+.hidden {
+    display: none;
+}

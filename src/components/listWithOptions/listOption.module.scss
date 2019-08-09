@@ -1,0 +1,43 @@
+@import '../../app-wide-scss/shared.scss';
+
+.container {
+    height: 100%;
+    overflow: auto;
+    border: double 5px $custom-alt2;
+}
+
+.title {
+    text-align: center;
+    padding: 2rem;
+    font-weight: 300;
+    span {
+        display: block;
+        font-weight: bold;
+        margin-top: 1rem;
+    }
+}
+
+ul {
+    padding: 1.5rem;
+    position: relative;
+
+    button {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        
+        background-color: darken($custom-primary, 10%);
+        color: $custom-light;
+        padding: 0.3rem;
+    }
+
+    li {
+        margin-bottom: 0.5rem;
+        font: italic 400 0.8rem "Times New Roman", Times, serif;
+    }
+
+    li:hover {
+        cursor: pointer;
+        color: $custom-primary;
+    }
+}

@@ -1,0 +1,33 @@
+.notification {
+    position: absolute;
+    margin: auto;
+    right: 0;
+    left: 0;
+    top: -100px;
+    background-color: green;
+    width: 250px;
+    padding: 1rem 2rem;
+    z-index: 100;
+    text-align: center;
+    transition: top 1s;
+}
+
+.reset {
+    transition: none;
+}
+
+.visible {
+    top: 100px;
+}
+
+.error {
+    border: 1px solid #411;
+    background-color: #e88;
+    color: #411;
+}
+
+.success {
+    border: 1px solid #141;
+    background-color: #8e8;
+    color: #141;
+}

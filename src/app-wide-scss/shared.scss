@@ -1,0 +1,16 @@
+$custom-light: #efefef;
+$custom-dark: #101;
+$custom-success: #2a2;
+$custom-danger: #a22;
+
+$custom-primary: #203f75;
+$custom-alt1: #a19f85;
+$custom-alt2: #731f2d;
+
+@mixin btn {
+    background: none;
+    text-align: center;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+}

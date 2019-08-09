@@ -1,0 +1,142 @@
+@import '../../app-wide-scss/shared.scss';
+
+.container {
+    position: relative;
+    width: 480px;
+}
+
+.spinner {
+    margin: 25% auto;
+    text-align: center;
+}
+
+circle {
+    &.active {
+        stroke: $custom-dark;
+        stroke-width: 2px;
+    }
+}
+.checkbox_list{
+    font-size: 0.75rem;
+    display: flex;
+    flex-flow: row wrap;
+
+    margin-left: 1rem;
+    margin-top: 2rem;
+}
+
+.field {
+    margin: 0.5rem;
+    position: relative;
+
+    .custom_checkbox {
+        display: inline-block;
+        
+        input {
+            position: absolute;
+            opacity: 0;
+            height: 0;
+            width: 0;
+        }
+    
+        span {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 16px;
+            width: 16px;
+        }
+
+        span:after {
+            content: "\2713";
+            position: absolute;
+            left: 2px;
+            display: none;
+            font-size: 1rem;
+            color: $custom-light;
+        }
+
+        input:checked ~ span:after {
+            display: block;
+        }
+    }
+
+    label {
+        margin-left: 20px;
+    }
+}
+
+.monoFieldForm {
+    margin-top: 2rem;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: baseline;
+
+    // label
+    *:first-child {flex: 1 1 20%;}
+
+    // text input 
+    *:nth-child(2) {
+        flex: 1 1 60%;
+        border: none;
+        border-bottom: 1px solid $custom-alt2;
+        padding: 0.3rem;
+        margin-right: 0.3rem;
+    }
+    
+    // submit input
+    *:nth-child(3) {
+        flex: 1 1 10%;
+        background: none;
+        border: none;
+        cursor: pointer;
+
+        background: radial-gradient($custom-success, lighten($custom-success, 20%));
+        color: $custom-light;
+
+        border-radius: 5px;
+        padding: 0.25rem 0.5rem;
+
+        &:disabled {
+            background: $custom-alt1;
+            color: $custom-dark;
+            cursor: not-allowed;
+        }
+
+        &:hover {
+            color: $custom-dark;
+        }
+    }
+}
+.caption {
+    color: $custom-danger;
+    flex: 1 0 100%;
+    text-align: center;
+    font-weight: 600;
+}
+.hidden {visibility: hidden;}
+
+.toggleBtn {
+    @include btn;
+    display: block;
+    padding: 0.3rem;
+    width: 40%;
+    border-radius: 10px;
+
+    &:disabled {
+        border: 1px solid $custom-alt1;
+        color: $custom-alt1;
+        cursor: not-allowed;
+    }
+}
+
+.active {
+    border: 1px solid $custom-primary;
+    color: $custom-primary;
+}
+
+.inactive {
+    border: 1px solid $custom-primary;
+    background-color: $custom-primary;
+    color: $custom-light;
+}

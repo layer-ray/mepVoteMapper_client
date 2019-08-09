@@ -1,0 +1,92 @@
+import React from 'react';
+import {connect} from 'react-redux';
+
+import {fetchVotationAction,
+        setCurrentVotationsAction,
+        flushVotationsAction,
+        resetTextListAction,
+        removeCurrentVotationsAction} from '../../redux/actions/votationActions';
+
+import styles from './listOption.module.scss';
+
+const ListWithOptions = props => {
+
+    const {currVotations, 
+           setCurrentVotations, 
+           flushCurrentVotations, 
+           textList, resetTextList,
+           getVotation} = props;
+   
+   // await used for clarity
+    const setRcvs = async e => {
+        const {id} = e.target;
+        const {rcvs} = textList.find(text => 
+            text._id === id);
+        await setCurrentVotations(rcvs);
+    };
+
+    const setCurrentRcv = async e => {
+        await getVotation(e.target.id);
+    }
+    
+    return (
+        <section className={styles.container}>
+        {textList.length === 0
+            ?   <p className={styles.title}>
+                    Search for a text using the panel on the left to discover: 
+                    <span>
+                        How did they vote?
+                    </span>
+                </p>
+            :   currVotations.length === 0 
+                ?   <ul className={styles.main_list}>
+                        <button 
+                            onClick={resetTextList}
+                        >&times;</button>
+                        {textList.map(text => 
+                            <li 
+                                key={text._id}
+                                id={text._id}
+                                onClick={setRcvs}
+                            >{text.title}</li>
+                        )}
+                    </ul>
+                :   <ul>
+                        <button 
+                            onClick={flushCurrentVotations}
+                        >BACK</button>
+                        {currVotations.map(rcv => 
+                            <li
+                                key={rcv._id}
+                                id={rcv._id}
+                                onClick={setCurrentRcv}
+                            >
+                                {rcv.type || rcv.title}
+                            </li>)}
+                    </ul>   
+        }
+        </section>
+    );
+};
+
+const mapStateToProps = state => ({
+    textList: state.textList.curr,
+    currVotations: state.currVotations
+});
+
+const mapDispatchToProps = dispatch => ({
+    setCurrentVotations: rcvs => {
+        dispatch(setCurrentVotationsAction(rcvs));
+    },
+    flushCurrentVotations: () => {
+        dispatch(flushVotationsAction());
+        dispatch(removeCurrentVotationsAction());
+    },
+    resetTextList: () => {
+        dispatch(resetTextListAction())
+    },
+    getVotation: id => {
+        dispatch(fetchVotationAction(id));
+    },
+})
+export default connect(mapStateToProps, mapDispatchToProps)(ListWithOptions);

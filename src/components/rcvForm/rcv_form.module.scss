@@ -1,0 +1,86 @@
+@import '../../app-wide-scss/shared.scss';
+
+.formContainer {
+    position: relative;
+}
+
+.formField {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: baseline;
+    margin-bottom: 1.5rem;
+}
+
+.formField label {
+    //flex-grow: 1;
+    display: inline-block;
+    padding: 0.5rem;
+}
+
+.caption {
+    position: absolute;
+    bottom: 2.5rem;
+    color: $custom-danger;
+    font-weight: 600;
+}
+
+.selectLabel {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+// select from Eric Rash
+.styledSelect {
+    display: inline-block;
+    background: url(http://i62.tinypic.com/15xvbd5.png) no-repeat 96% 0;
+    overflow: hidden;
+    width: 10rem;
+    border: 1px solid $custom-alt2;
+    color: $custom-alt2;
+ }
+ 
+ .styledSelect select {
+    background: transparent;
+    border: none;
+    padding-left: 20px; /* If you add too much padding here, the options won't show in IE */
+    width: 120%;
+    padding: 0.3rem;
+ }
+ 
+// -----------
+
+.textInput {
+    border: none;
+    border-bottom: 1px solid $custom-alt2;
+    flex-grow: 1;
+    min-width: 200px;
+    padding: 0.3rem;
+    margin-left: 0.25rem;
+}
+
+.textInput:focus {
+    box-shadow: 1px -1px 2px $custom-alt2, -1px -1px 2px $custom-alt2;
+}
+
+.helperText {
+    font-weight: 400;
+    font-size: 0.6rem;
+}
+
+.submitBtn {
+    @include btn;
+    display: block;
+    border: 1px solid $custom-success;
+    color: $custom-success;
+    padding: 0.3rem;
+    width: 80%;
+    margin: auto;
+    border-radius: 10px;
+    
+    &:disabled {
+        border: 1px solid $custom-alt1;
+        color: $custom-alt1;
+        cursor: not-allowed;
+    }
+}
