@@ -3,7 +3,7 @@ import {fetchVotation, fetchVotations,
 
 export const fetchVotationAction = id => async dispatch => {
     dispatch({type: fetchVotation.LOADING});
-    const reqUrl = 'https://check-the-vote.herokuapp.com/rcv/get-by-id/' + encodeURIComponent(id);
+    const reqUrl = 'https://mep-vote-mapper.herokuapp.com/rcv/get-by-id/' + encodeURIComponent(id);
 
     try {
         const votation = await fetch(reqUrl)
@@ -20,7 +20,7 @@ export const fetchVotationAction = id => async dispatch => {
 export const fetchVotationsByDates = dates => async dispatch => {
 
     dispatch({type: fetchVotations.LOADING});
-    const reqUrl = 'https://check-the-vote.herokuapp.com/rcv/get-by-dates';
+    const reqUrl = 'https://mep-vote-mapper.herokuapp.com/rcv/get-by-dates';
     
     const reqOpts = {
         method: 'post',
@@ -41,7 +41,7 @@ export const fetchVotationsByDates = dates => async dispatch => {
 export const fetchVotationsByTextTitle = lookupData => async dispatch => {
     dispatch({type: fetchVotations.LOADING});
     
-    const reqUrl = 'https://check-the-vote.herokuapp.com/text/get-text-by-title'
+    const reqUrl = 'https://mep-vote-mapper.herokuapp.com/text/get-text-by-title'
     const reqOpts = {
         method: 'post',
         headers: {'content-type':'application/json'},
