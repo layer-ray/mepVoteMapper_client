@@ -50,7 +50,8 @@ module.exports = {
                 ]
             },
             {
-                test: /\.svg$/,
+                type: 'javascript/auto',
+                test: /\.(svg|json)$/,
                 use: [
                     {
                         loader: 'file-loader',
