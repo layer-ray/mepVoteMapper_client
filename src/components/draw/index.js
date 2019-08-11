@@ -10,8 +10,7 @@ import {setNotification} from '../../redux/actions/notificationActions';
 import Spinner from '../spinner';
 
 // mep coords organized from inner to outer, from right to left
-import sortedHemiCoords from './sortedCoords.json';
-
+import sortedHemiCoords from './sortedCoords.js';
 import styles from './draw.module.scss';
 
 const Draw = props => {
