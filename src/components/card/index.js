@@ -43,7 +43,7 @@ const Card = ({currentMep, currVotation}) => {
                 {imgLoaded  
                     ?   <>
                         <img 
-                            src={`http://www.europarl.europa.eu/mepphoto/${currentMep.persId}.jpg`}
+                            src={`https://www.europarl.europa.eu/mepphoto/${currentMep.persId}.jpg`}
                             alt={currentMep.fullName}
                             className={styles.photo}
                         />
