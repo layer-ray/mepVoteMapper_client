@@ -51,7 +51,18 @@ module.exports = {
             },
             {
                 type: 'javascript/auto',
-                test: /\.(svg|json)$/,
+                test: /\.json$/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: '[name].[ext]'
+                        }
+                    }
+                ]
+            },
+            {
+                test: /\.(svg|png)$/,
                 use: [
                     {
                         loader: 'file-loader',
