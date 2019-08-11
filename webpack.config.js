@@ -52,12 +52,13 @@ module.exports = {
             {
                 type: 'javascript/auto',
                 test: /\.json$/,
+                include: [path.resolve(__dirname, 'src/components/draw')],
                 use: [
                     {
                         loader: 'file-loader',
-/*                         options: {
+                        options: {
                             name: '[name].[ext]'
-                        } */
+                        }
                     }
                 ]
             },
