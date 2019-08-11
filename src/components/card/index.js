@@ -15,7 +15,7 @@ const Card = ({currentMep, currVotation}) => {
         setImgLoaded(false);
         if (mepSelected) {
             const imgSrc = new Image();
-            imgSrc.src = `http://www.europarl.europa.eu/mepphoto/${currentMep.persId}.jpg`;
+            imgSrc.src = `https://www.europarl.europa.eu/mepphoto/${currentMep.persId}.jpg`;
             imgSrc.onload = () => setImgLoaded(true);
         };
     }, [currentMep]);
