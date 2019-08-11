@@ -1,6 +1,6 @@
 import {fetchSortedMeps, 
         SET_MEP,
-        POPUP_ERROR} from '../types';
+        SET_NOTIFICATION} from '../types';
 
 const baseUrl = 'https://mep-vote-mapper.herokuapp.com/mep'
 
@@ -13,10 +13,10 @@ export const fetchSortedMepsAction = () => async dispatch => {
                             .then(res => res.json());
                             
         meps.error
-            ? dispatch({type: POPUP_ERROR, error: meps.error})
+            ? dispatch({type: SET_NOTIFICATION, payload: {type:'error', msg:meps.error}})
             : dispatch({type: fetchSortedMeps.SUCCESS, payload: meps.fetchResponse});
     } catch(err){
-        dispatch({type: POPUP_ERROR, error: err});
+        dispatch({type: SET_NOTIFICATION, payload: {type:'error', msg:err}});
     };
 };
 
