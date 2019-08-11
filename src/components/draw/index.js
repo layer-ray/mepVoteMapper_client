@@ -19,7 +19,8 @@ const Draw = props => {
     const {getSortedMeps, getGroups, 
            setCurrentMep, sortedMeps, 
            currGroups, currentMep,
-           sMLoading, currVotation, 
+           sMLoading, currVotation,
+           displayNotification,
            errors, setError} = props;
 
     const [positionedMeps, setPositionedMeps] = useState({});
@@ -59,8 +60,8 @@ const Draw = props => {
         const toPlaceArr = sortedMeps.slice(firstNonPlaced);
 
         let groupsObj = {};
-        if (sortedHemiCoords) {            
-            for (let i=0; i < sortedHemiCoords.length; i++) {
+        for (let i=0; i < sortedHemiCoords.length; i++) {
+            if (sortedHemiCoords[i].pos) {            
                 const row = parseInt(sortedHemiCoords[i].pos.split('|')[0]);
 
                 let el = (row === 10 || row === 11) && toPlaceArr.length > 0 
@@ -76,10 +77,10 @@ const Draw = props => {
                         ? groupsObj[el.group_info[0].acronim].push(el)
                         : groupsObj[el.group_info[0].acronim] = [el]
                 };
-            };
-        } else {
-            displayNotification({type:'error', msg: 'Coordinates file not found'});
-        }
+            } else {
+                displayNotification({type:'error', msg: 'Coordinates file not found'});
+            }
+        };
         setPositionedMeps(groupsObj);
     }, [sortedMeps])
 

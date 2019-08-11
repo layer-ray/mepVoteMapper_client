@@ -37,7 +37,12 @@ const Notification = ({currState}) => {
                         style[currState.type],
                         visible].join(" ")} 
         >
-                <p>{currState.msg}</p>
+                <p>
+                    {typeof currState.msg === "string" 
+                        ? currState.msg 
+                        : currState.msg.toString()
+                    }
+                </p>
         </aside>
     );
 };
