@@ -59,24 +59,27 @@ const Draw = props => {
         const toPlaceArr = sortedMeps.slice(firstNonPlaced);
 
         let groupsObj = {};
-        for (let i=0; i < sortedHemiCoords.length; i++) {
-            const row = parseInt(sortedHemiCoords[i].pos.split('|')[0]);
+        if (sortedHemiCoords) {            
+            for (let i=0; i < sortedHemiCoords.length; i++) {
+                const row = parseInt(sortedHemiCoords[i].pos.split('|')[0]);
 
-            let el = (row === 10 || row === 11) && toPlaceArr.length > 0 
-                        ? toPlaceArr.pop()
-                        : placedArr.pop();
+                let el = (row === 10 || row === 11) && toPlaceArr.length > 0 
+                            ? toPlaceArr.pop()
+                            : placedArr.pop();
 
-            if (el) {
-                el.x = sortedHemiCoords[i].x;
-                el.y = sortedHemiCoords[i].y;
-    
-                // split meps by group 
-                groupsObj[el.group_info[0].acronim] 
-                    ? groupsObj[el.group_info[0].acronim].push(el)
-                    : groupsObj[el.group_info[0].acronim] = [el]
+                if (el) {
+                    el.x = sortedHemiCoords[i].x;
+                    el.y = sortedHemiCoords[i].y;
+        
+                    // split meps by group 
+                    groupsObj[el.group_info[0].acronim] 
+                        ? groupsObj[el.group_info[0].acronim].push(el)
+                        : groupsObj[el.group_info[0].acronim] = [el]
+                };
             };
-        };
-
+        } else {
+            displayNotification({type:'error', msg: 'Coordinates file not found'});
+        }
         setPositionedMeps(groupsObj);
     }, [sortedMeps])
 
@@ -95,7 +98,6 @@ const Draw = props => {
 
         mepObj
             ? setCurrentMep(mepObj)
-            //: displayNotification({type:'error', msg: Math.random()});
             : setError("no mep found");
     };
 
