@@ -106,7 +106,7 @@ const RcvForm = props => {
                 Plenary votations exposed by this application are mainly about amendments to 
                 texts proposed by the commission.
                 It is possible to search for a text by word(s) in the text title or by votation dates.
-                In the first case the text is presented with all its (voted) amendments; when
+                In the first case the text is presented with all its (voted by roll call) amendments; when
                 looked up through dates text includes only the votations happened within the 
                 selected time range.
             </p>
