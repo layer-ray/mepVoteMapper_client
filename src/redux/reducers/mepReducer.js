@@ -1,6 +1,6 @@
 import {fetchSortedMeps, 
         fetchGroups, SET_MEP, 
-        POPUP_ERROR} from '../types';
+        SET_NOTIFICATION} from '../types';
 
 // all meps
 export const sortedMepsReducer = (state={curr: [], loading: false}, action) => {
@@ -9,7 +9,7 @@ export const sortedMepsReducer = (state={curr: [], loading: false}, action) => {
             return {curr: action.payload, loading: false};
         case fetchSortedMeps.LOADING:
             return {...state, loading: true};
-        case POPUP_ERROR: 
+        case SET_NOTIFICATION: 
             return {...state, loading: false};
         default: 
             return state;
@@ -33,7 +33,7 @@ export const groupsReducer = (state={curr: [], loading: false}, action) => {
             return {curr: action.payload, loading: false};
         case fetchGroups.LOADING:
             return {...state, loading: true};
-        case POPUP_ERROR:
+        case SET_NOTIFICATION:
             return {...state, loading: false};
         default:
             return state;

@@ -1,4 +1,4 @@
-import {fetchGroups, POPUP_ERROR} from '../types';
+import {fetchGroups, SET_NOTIFICATION} from '../types';
 
 export const groupReducer = (state  = {curr: [], loading: false}, action) => {
     switch(action.type) {
@@ -6,7 +6,7 @@ export const groupReducer = (state  = {curr: [], loading: false}, action) => {
             return {...state, loading: true};
         case fetchGroups.SUCCESS:
             return {curr: action.payload, loading: false};
-        case POPUP_ERROR:
+        case SET_NOTIFICATION:
             return {...state, loading: false};
         default: 
             return state;

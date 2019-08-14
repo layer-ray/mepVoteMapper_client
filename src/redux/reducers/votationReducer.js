@@ -1,4 +1,4 @@
-import {fetchVotation, fetchVotations, setVotations, POPUP_ERROR} from '../types';
+import {fetchVotation, fetchVotations, setVotations, SET_NOTIFICATION} from '../types';
 // main list - list all the texts matching the search criteria
 export const textListReducer = (state={curr:[], loading: false}, action) => {
     switch(action.type) {
@@ -8,7 +8,7 @@ export const textListReducer = (state={curr:[], loading: false}, action) => {
             return {curr: action.payload, loading: false};
         case fetchVotations.FLUSH:
             return {curr: [], loading: false};
-        case POPUP_ERROR:
+        case SET_NOTIFICATION:
             return {...state, loading: false};
         default:
             return state;
@@ -34,7 +34,7 @@ export const votationReducer = (state={curr:{}, loading: false}, action) => {
             return {...state, loading: true};
         case fetchVotation.SUCCESS:
             return {curr: action.payload, loading: false};
-        case POPUP_ERROR:
+        case SET_NOTIFICATION:
             return {...state, loading: false};
         default:
             return state;
