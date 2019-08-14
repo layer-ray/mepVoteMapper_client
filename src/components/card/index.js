@@ -12,6 +12,8 @@ const Card = ({currentMep, currVotation}) => {
     const [imgLoaded, setImgLoaded] = useState(true);
     
     useEffect(() => {
+        // mep image loads after related data ( name, ...)
+        // that's why this is needed
         setImgLoaded(false);
         if (mepSelected) {
             const imgSrc = new Image();
