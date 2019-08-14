@@ -42,6 +42,14 @@ ul {
     }
 }
 
+.firstListItem {
+    text-align: center;
+    color: $custom-alt2;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px dotted $custom-alt2;
+    font: 400 0.8rem "Times New Roman", Times, serif;
+}
+
 .spinner {
     margin: 10% auto;
     text-align: center;
