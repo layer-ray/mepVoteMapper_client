@@ -29,7 +29,6 @@ export const setVotations = {
 }
 /* --------------------------- */
 
-export const POPUP_ERROR = "POPUP_ERROR";
 export const DRAW_FORM_ERROR = "DRAW_FORM_ERROR";
 export const RCV_FORM_ERROR = "RCV_FORM_ERROR";
 export const SET_NOTIFICATION = "SET_NOTIFICATION";
