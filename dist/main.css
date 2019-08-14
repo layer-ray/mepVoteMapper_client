@@ -71,6 +71,10 @@
     color: #a19f85;
     cursor: not-allowed; }
 
+.spinner\.module__spinner__i9T1Z {
+  background-color: #22c;
+  border-radius: 50%; }
+
 .listOption\.module__container__2vVCL {
   height: 100%;
   overflow: auto;
@@ -102,9 +106,9 @@ ul {
     cursor: pointer;
     color: #203f75; }
 
-.spinner\.module__spinner__i9T1Z {
-  background-color: #22c;
-  border-radius: 50%; }
+.listOption\.module__spinner__24iqv {
+  margin: 10% auto;
+  text-align: center; }
 
 .card\.module__container__gdzEv {
   height: 100%; }
