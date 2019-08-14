@@ -34,7 +34,7 @@ const ListWithOptions = props => {
     return (
         <section className={styles.container}>
         {textLoading 
-            ?   <Spinner />
+            ?    <div className={styles.spinner}><Spinner /></div>
             :   textList.length === 0
                     ?   <p className={styles.title}>
                             Search for a text using the panel on the left to discover: 
